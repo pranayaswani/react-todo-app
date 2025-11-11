@@ -15,6 +15,8 @@ const TodoInput = () => {
         console.log("Current Value of Tasks is",tasks);
     }
 
+    
+
   return (
     <div>
        <label htmlFor="">Add Some Todo</label>
@@ -22,9 +24,10 @@ const TodoInput = () => {
        <div>
             <button onClick={handleClick}>Add Todo</button>
        </div>
+       
        <div>
           
-          <TodoList todos={tasks}/>
+          <TodoList todos={tasks} setTasks={setTasks}/>
           
        </div>
     </div>
