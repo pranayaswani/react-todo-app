@@ -1,23 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react';
 
-const TodoList = (props) => {
-    console.log("Value of Tasks passed as PROPS",props.todos);
-    
+const TodoList = ({ todos = [], setTasks }) => {
+  const handleDelete = (todo) => {
+    const updatedTodos = todos.filter((work) => work !== todo);
+    setTasks(updatedTodos);
+  };
 
-    
-   
   return (
     <div>
-       <h2>Todo List</h2>
-       {
-        props.todos.map((todo)=>{
-            return<>
-                <p>{todo}</p>
-            </>
-        })
-       }
+      <h2>Todo List</h2>
+      {todos.map((todo, index) => (
+        <div key={index}>
+          <p>{todo}</p>
+          <button onClick={() => handleDelete(todo)}>Delete Todo</button>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default TodoList
+export default TodoList;
