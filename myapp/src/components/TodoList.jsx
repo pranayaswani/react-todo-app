@@ -13,6 +13,10 @@ const TodoList = (props) => {
         props.todos.map((todo)=>{
             return<>
                 <p>{todo}</p>
+                <span>
+                  <label htmlFor="">Completed</label>
+                  <input type='checkbox'></input>
+                </span>
             </>
         })
        }
